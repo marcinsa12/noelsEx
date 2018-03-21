@@ -1,0 +1,27 @@
+h1 {
+  width: 200px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+table, th, td {
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+}
+
+th {
+  cursor: pointer;
+}
+
+td {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  word-wrap: break-word;
+  margin: 10px;
+  text-align: center;
+  height: 50px;
+  padding: 8px;
+}
+
+.longContent {
+  width: 155px;
+}
