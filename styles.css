@@ -1,9 +1,11 @@
 h1 {
   width: 200px;
-  font-family: 'Tahoma', sans-serif;
+  font-family: "Tahoma", sans-serif;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #dedede;
   box-sizing: border-box;
 }
@@ -13,7 +15,7 @@ th {
 }
 
 td {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   word-wrap: break-word;
   margin: 10px;
@@ -24,4 +26,8 @@ td {
 
 .longContent {
   width: 155px;
+}
+
+.wrong {
+  background-color: rgba(255, 25, 40, 0.3);
 }
