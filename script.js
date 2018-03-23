@@ -67,26 +67,22 @@
 				myApp.sortFlag == sorting
 					? myApp.filteredResults.sort(checkOrder(sorting, "descending"))
 					: myApp.filteredResults.sort(checkOrder(sorting));
-				myApp.sortFlag == sorting
-					? (myApp.sortFlag = "")
-					: (myApp.sortFlag = sorting);
+				myApp.sortFlag == sorting ? (myApp.sortFlag = "") : (myApp.sortFlag = sorting);
 			},
 			filteredData: function(filterString) {
 				filterString = filterString.toUpperCase();
-				let filtered = myApp.elements.filter(el => {
-					if (
-						el.name.toUpperCase().indexOf(filterString) > -1 ||
-						el.id.toString().indexOf(filterString) > -1 ||
-						el.sku.toUpperCase().indexOf(filterString) > -1
-					) {
-						return true;
-					}
-				});
+				columns = ["id", "name", "sku"];
+				let filtered = myApp.elements.filter(el =>
+					columns.some(
+						s =>
+							String(el[s])
+								.toUpperCase()
+								.indexOf(filterString) > -1
+					)
+				);
 				myApp.filteredResults = filtered;
 				let searchBox = document.querySelector("input");
-				myApp.filteredResults.length === 0
-					? searchBox.classList.add("wrong")
-					: searchBox.classList.remove("wrong");
+				myApp.filteredResults.length === 0 ? searchBox.classList.add("wrong") : searchBox.classList.remove("wrong");
 			}
 		}
 	});
